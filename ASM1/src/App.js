@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar, NavbarBrand } from 'reactstrap';
 import { DEPARTMENTS, ROLE, STAFFS } from './shared/staffs.jsx';
 
 class App extends Component {
@@ -12,18 +13,13 @@ class App extends Component {
   }
 
   render() {
-    const employees = this.state.staffs.map(e => {
-      return (
-        <div key={e.id} className='col-6'>
-          {e.name}
-        </div>
-      );
-    });
     return (
-      <div className='container'>
-        <div className='row'>
-          {employees}
-        </div>
+      <div>
+        <Navbar dark color="primary">
+          <div className="container">
+            <NavbarBrand href="/">Ứng dụng quản lý nhân sự v1.0</NavbarBrand>
+          </div>
+        </Navbar>
       </div>
     );
   }
