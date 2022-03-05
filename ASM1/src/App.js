@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import { DEPARTMENTS, ROLE, STAFFS } from './shared/staffs.jsx';
+import StaffList from './components/StaffList.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       staffs: STAFFS
     }
@@ -20,6 +19,7 @@ class App extends Component {
             <NavbarBrand href="/">Ứng dụng quản lý nhân sự v1.0</NavbarBrand>
           </div>
         </Navbar>
+        <StaffList staffs={this.state.staffs} />        
       </div>
     );
   }
