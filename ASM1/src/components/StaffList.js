@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, CardImg, CardTitle, CardBody, CardText } from "reactstrap";
 import dateFormat from "dateformat";
+import './StaffList.css';
 
 class StaffList extends Component {
     constructor(props) {
@@ -49,8 +50,8 @@ class StaffList extends Component {
     render() {
         const staffList = this.props.staffs.map((staff) => {
             return(
-                <div className="col-12 col-md-6 col-lg-4 mt-3">
-                    <Card key={staff.id} onClick={() => this.onSelected(staff)}>
+                <div className="list col-12 col-md-6 col-lg-4 mt-3">
+                    <Card className="item" key={staff.id} onClick={() => this.onSelected(staff)}>
                         <CardBody>
                             <CardTitle>{staff.name}</CardTitle>
                         </CardBody>
@@ -60,7 +61,7 @@ class StaffList extends Component {
         })
         return(
             <div className="container">
-                <div className="row">
+                <div className="row list">
                     {staffList}
                 </div>
                 <div className="row">
